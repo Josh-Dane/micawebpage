@@ -119,6 +119,94 @@
     #order .section-header, #order p {
         color: var(--pastel-cream); /* Changed text color to cream for readability */
     }
+    /* Products Section */
+    #products {
+        background-color: var(--pastel-cream); /* Use a light background for better visibility */
+        color: var(--pastel-purple); /* Text color for contrast */
+        min-height: 100vh; /* Ensure the section takes up at least the full height of the viewport */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    /* Adjustments for container to ensure center alignment and distribution */
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+    }
+
+    /* General styles already provided above, only adding new responsive styles below */
+
+    /* Responsive Styles */
+    @media (max-width: 992px) {
+        .navbar .navbar-nav .nav-link {
+            padding: 10px 15px; /* Larger tap targets for touch devices */
+        }
+
+        .section-header {
+            font-size: 2.5rem; /* Smaller headers for smaller screens */
+        }
+
+        p {
+            font-size: 1.3rem; /* Adjust paragraph text size for readability */
+        }
+
+        .card {
+            margin-bottom: 30px; /* Add more space between cards */
+        }
+
+        .card-body {
+            padding: 20px; /* More padding inside cards */
+        }
+
+        .btn-primary {
+            font-size: 1.1rem; /* Slightly larger button text */
+            padding: 12px 24px; /* Larger buttons for easier interaction */
+        }
+
+        #products, #cart, #order {
+            padding: 20px; /* More padding on smaller screens */
+        }
+    }
+
+    @media (max-width: 768px) {
+        .navbar-toggler {
+            margin-right: 0; /* Adjust navbar toggle button position if necessary */
+        }
+
+        .section-header {
+            font-size: 2rem; /* Even smaller headers for mobile devices */
+        }
+
+        .card-title {
+            font-size: 1.5rem; /* Smaller card titles */
+        }
+
+        .card-text {
+            font-size: 1.1rem; /* Smaller text in cards */
+        }
+
+        .row {
+            margin-right: 0;
+            margin-left: 0; /* Remove default Bootstrap margins in rows */
+        }
+
+        .col-md-4 {
+            flex: 0 0 100%; /* Make product cards stack vertically */
+            max-width: 100%; /* Use the full width */
+        }
+
+        #products {
+            min-height: auto; /* Adjust minimum height on smaller screens */
+            padding: 60px 20px; /* Larger padding */
+        }
+
+        #cart {
+            margin-top: 20px; /* Add space above the cart on mobile */
+        }
+    }
 
     </style>
     <script>
