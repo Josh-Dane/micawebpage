@@ -75,7 +75,7 @@
         function addToCart(productName, price) {
             var cart = document.getElementById('cart');
             var item = document.createElement('div');
-            item.innerHTML = `<strong>${productName}</strong> - $${price.toFixed(2)}`;
+            item.innerHTML = `<strong>${productName}</strong> - ₱${price.toFixed(2)}`;
             cart.appendChild(item);
         }
 
@@ -106,7 +106,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Mango Shake</h5>
                         <p class="card-text">A tropical delight full of fruity goodness. Mango-odness!</p>
-                        <button class="btn btn-primary" onclick="addToCart('Mango Shake', 5)">Add to Cart</button>
+                        <button class="btn btn-primary" onclick="addToCart('Mango Shake', 75)">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -118,7 +118,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Watermelon Shake</h5>
                         <p class="card-text">Refreshing and sweet - a summertime favorite.</p>
-                        <button class="btn btn-primary" onclick="addToCart('Watermelon Shake', 4.5)">Add to Cart</button>
+                        <button class="btn btn-primary" onclick="addToCart('Watermelon Shake', 85)">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -130,7 +130,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Banana Shake</h5>
                         <p class="card-text">Creamy and rich, perfect for banana lovers.</p>
-                        <button class="btn btn-primary" onclick="addToCart('Banana Shake', 5)">Add to Cart</button>
+                        <button class="btn btn-primary" onclick="addToCart('Banana Shake', 75)">Add to Cart</button>
                     </div>
                 </div>
             </div>
