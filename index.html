@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shake It Up! - Fresh Shakes</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+    --pastel-green: #8ecae6; /* Pastel green for a refreshing feel */
+    --pastel-yellow: #ffddb7; /* Pastel yellow for a subtle tropical vibe */
+    --pastel-pink: #f9c6c9; /* Soft pink for watermelon and berry accents */
+    --pastel-cream: #fdfcdc; /* Creamy background color to keep the design light */
+    --pastel-purple: #cdb4db; /* Light purple to add a bit of whimsy and contrast */
+    }
+
+    body {
+        background-color: var(--pastel-cream);
+        color: var(--pastel-purple);
+    }
+
+    .navbar, .btn-primary, .footer {
+        background-color: var(--pastel-green);
+        color: white;
+    }
+
+    .btn-primary:hover {
+        background-color: var(--pastel-pink);
+        color: white;
+    }
+
+    .card img {
+        width: 100%;
+        height: 200px; /* Fixed height for all images */
+        object-fit: cover; /* Ensures images cover the area fully */
+    }
+
+    .card {
+        margin-bottom: 20px;
+        border: none;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Subtle shadow for depth */
+    }
+
+    .card-body {
+        background-color: white;
+        color: var(--pastel-purple);
+    }
+
+    #cart {
+        border: 1px solid var(--pastel-yellow);
+        padding: 10px;
+        background-color: white;
+    }
+
+    .footer {
+        margin-top: 30px;
+        padding: 10px 0;
+        background-color: var(--pastel-green);
+    }
+    html, body {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .container {
+        flex: 1 0 auto;
+    }
+    footer {
+        flex-shrink: 0;
+    }   
+
+    </style>
+    <script>
+        function addToCart(productName, price) {
+            var cart = document.getElementById('cart');
+            var item = document.createElement('div');
+            item.innerHTML = `<strong>${productName}</strong> - $${price.toFixed(2)}`;
+            cart.appendChild(item);
+        }
+
+        function placeOrder() {
+            var cart = document.getElementById('cart');
+            if (cart.children.length > 1) { // We expect more than the title
+                alert('Thank you for your order!');
+                while (cart.children.length > 1) { // Keep the title, remove the rest
+                    cart.removeChild(cart.lastChild);
+                }
+            } else {
+                alert('Your cart is empty. Please add some products before placing your order.');
+            }
+        }
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-dark">
+        <span class="navbar-brand mb-0 h1">Shake It Up!</span>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Mango Shake Product -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://ikneadtoeat.com/wp-content/uploads/2021/07/mango-milkshake-photos-2.jpg" class="card-img-top" alt="Mango Shake">
+                    <div class="card-body">
+                        <h5 class="card-title">Mango Shake</h5>
+                        <p class="card-text">A tropical delight full of fruity goodness. Mango-odness!</p>
+                        <button class="btn btn-primary" onclick="addToCart('Mango Shake', 5)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Watermelon Shake Product -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://shortgirltallorder.com/wp-content/uploads/2020/07/strawberry-watermelon-smoothie-square.jpg" class="card-img-top" alt="Watermelon Shake">
+                    <div class="card-body">
+                        <h5 class="card-title">Watermelon Shake</h5>
+                        <p class="card-text">Refreshing and sweet - a summertime favorite.</p>
+                        <button class="btn btn-primary" onclick="addToCart('Watermelon Shake', 4.5)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Banana Shake Product -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://bakingmischief.com/wp-content/uploads/2021/02/banana-milkshake-without-ice-cream-image-square-3.jpg" class="card-img-top" alt="Banana Shake">
+                    <div class="card-body">
+                        <h5 class="card-title">Banana Shake</h5>
+                        <p class="card-text">Creamy and rich, perfect for banana lovers.</p>
+                        <button class="btn btn-primary" onclick="addToCart('Banana Shake', 5)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="cart" class="mt-4">
+            <h4>Your Cart</h4>
+            <!-- Items added to cart will appear here -->
+        </div>
+        <button class="btn btn-primary mt-3" onclick="placeOrder()">Place Order</button>
+    </div>
+
+    <footer class="footer text-center">
+        <div class="container">
+            <span>Thank you for visiting Shake It Up! Have a great day!</span>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
