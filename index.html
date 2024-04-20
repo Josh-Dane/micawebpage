@@ -17,6 +17,7 @@
     body {
         background-color: var(--pastel-cream);
         color: var(--pastel-purple);
+        padding-top: 50px;
     }
 
     .navbar, .btn-primary, .footer {
@@ -68,7 +69,56 @@
     }
     footer {
         flex-shrink: 0;
-    }   
+    }
+    section {
+    padding: 100px 0; /* Increase padding for a full cover effect */
+    text-align: center; /* Center align the content */
+    }
+
+    .section-header {
+    font-size: 3rem; /* Larger header text for emphasis */
+    color: white; /* White text for headers */
+    margin-bottom: 50px; /* Larger margin for visual separation */
+    }
+
+    p {
+    font-size: 1.5rem; /* Larger paragraph text */
+    color: white; /* White text for paragraphs */
+    }
+
+    #background, #location, #ingredients, #welcome {
+    background-color: var(--pastel-green); /* Or any other preferred color */
+    }
+
+    /* Navbar link colors */
+    .navbar .navbar-nav .nav-link {
+        color: var(--pastel-cream);
+    }
+
+    .navbar .navbar-nav .nav-link:hover {
+        color: var(--pastel-pink);
+    }
+    
+    .card-title {
+        color: var(--pastel-purple); /* Ensuring readability against the card's background */
+    }
+    
+    .card-text {
+        color: var(--pastel-purple); /* Same as above */
+    }
+
+    #products .section-header, 
+    #products p {
+    color: var(--pastel-purple); /* Different color for contrast if needed */
+    }
+
+    #order {
+        background-color: var(--pastel-purple); /* Changed to pastel purple for contrast */
+    }
+
+    #order .section-header, #order p {
+        color: var(--pastel-cream); /* Changed text color to cream for readability */
+    }
 
     </style>
     <script>
@@ -93,9 +143,77 @@
     </script>
 </head>
 <body>
-    <nav class="navbar navbar-dark">
-        <span class="navbar-brand mb-0 h1">Shake It Up!</span>
-    </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Shake It Up!</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#welcome">Welcome</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#products">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#background">Background</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#location">Location</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#ingredients">Ingredients</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#order">Order</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>    
+
+        <!-- Welcome Section -->
+    <section id="welcome">
+        <div class="container">
+            <h2 class="section-header">Welcome to Our Store!</h2>
+            <p>Delight in our refreshing, natural shakes made with the freshest ingredients. Straight from our cozy corner in Manila to your hands, savor every sip!</p>
+        </div>
+    </section>
+
+    <!-- Background Section -->
+    <section id="background" style="background-color: var(--pastel-yellow);">
+        <div class="container">
+            <h2 class="section-header">Our Story</h2>
+            <p>Our journey began with a quest to find the perfect blend of taste and health. Each shake is a chapter of our story, crafted with love and care.</p>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location">
+        <div class="container">
+            <h2 class="section-header">Our Location</h2>
+            <p>We're located in the heart of Manila, Philippines - a vibrant city that's as colorful and diverse as our shake flavors!</p>
+        </div>
+    </section>
+
+    <!-- Ingredients Section -->
+    <section id="ingredients" style="background-color: var(--pastel-pink);">
+        <div class="container">
+            <h2 class="section-header">What's Inside</h2>
+            <p>Mango Shake: Ripe Mangoes, Fresh Cream, a Dash of Honey. Watermelon Shake: Juicy Watermelon, Strawberry Essence. Banana Shake: Organic Bananas, Yogurt, a Sprinkle of Cinnamon.</p>
+        </div>
+    </section>
+
+    <!-- How to Order Section -->
+    <section id="order">
+        <div class="container">
+            <h2 class="section-header">How to Place an Order</h2>
+            <p>Ordering is easy! Browse our selection of shakes, add your favorites to the cart, and hit the 'Place Order' button. Enjoy your shakes in just a few clicks!</p>
+        </div>
+    </section>
 
     <div class="container mt-5">
         <div class="row">
