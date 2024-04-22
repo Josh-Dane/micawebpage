@@ -4,359 +4,267 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shake It Up! - Fresh Shakes</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        :root {
-    --pastel-green: #8ecae6; /* Pastel green for a refreshing feel */
-    --pastel-yellow: #ffddb7; /* Pastel yellow for a subtle tropical vibe */
-    --pastel-pink: #f9c6c9; /* Soft pink for watermelon and berry accents */
-    --pastel-cream: #fdfcdc; /* Creamy background color to keep the design light */
-    --pastel-purple: #cdb4db; /* Light purple to add a bit of whimsy and contrast */
-    }
-
-    body {
-        background-color: var(--pastel-cream);
-        color: var(--pastel-purple);
-        padding-top: 50px;
-    }
-
-    .navbar, .btn-primary, .footer {
-        background-color: var(--pastel-green);
-        color: white;
-    }
-
-    .btn-primary:hover {
-        background-color: var(--pastel-pink);
-        color: white;
-    }
-
-    .card img {
-        width: 100%;
-        height: 200px; /* Fixed height for all images */
-        object-fit: cover; /* Ensures images cover the area fully */
-    }
-
-    .card {
-        margin-bottom: 20px;
-        border: none;
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Subtle shadow for depth */
-    }
-
-    .card-body {
-        background-color: white;
-        color: var(--pastel-purple);
-    }
-
-    #cart {
-        border: 1px solid var(--pastel-yellow);
-        padding: 10px;
-        background-color: white;
-    }
-
-    .footer {
-        margin-top: 30px;
-        padding: 10px 0;
-        background-color: var(--pastel-green);
-    }
-    html, body {
-        height: 100%;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-    }
-    .container {
-        flex: 1 0 auto;
-    }
-    footer {
-        flex-shrink: 0;
-    }
-    section {
-    padding: 100px 0; /* Increase padding for a full cover effect */
-    text-align: center; /* Center align the content */
-    }
-
-    .section-header {
-    font-size: 3rem; /* Larger header text for emphasis */
-    color: white; /* White text for headers */
-    margin-bottom: 50px; /* Larger margin for visual separation */
-    }
-
-    p {
-    font-size: 1.5rem; /* Larger paragraph text */
-    color: white; /* White text for paragraphs */
-    }
-
-    #background, #location, #ingredients, #welcome {
-    background-color: var(--pastel-green); /* Or any other preferred color */
-    }
-
-    /* Navbar link colors */
-    .navbar .navbar-nav .nav-link {
-        color: var(--pastel-cream);
-    }
-
-    .navbar .navbar-nav .nav-link:hover {
-        color: var(--pastel-pink);
-    }
-    
-    .card-title {
-        color: var(--pastel-purple); /* Ensuring readability against the card's background */
-    }
-    
-    .card-text {
-        color: var(--pastel-purple); /* Same as above */
-    }
-
-    #products .section-header, 
-    #products p {
-    color: var(--pastel-purple); /* Different color for contrast if needed */
-    }
-
-    #order {
-        background-color: var(--pastel-purple); /* Changed to pastel purple for contrast */
-    }
-
-    #order .section-header, #order p {
-        color: var(--pastel-cream); /* Changed text color to cream for readability */
-    }
-    /* Products Section */
-    #products {
-        background-color: var(--pastel-cream); /* Use a light background for better visibility */
-        color: var(--pastel-purple); /* Text color for contrast */
-        min-height: 100vh; /* Ensure the section takes up at least the full height of the viewport */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    /* Adjustments for container to ensure center alignment and distribution */
-    .container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        height: 100%;
-    }
-
-    /* General styles already provided above, only adding new responsive styles below */
-
-    /* Responsive Styles */
-    @media (max-width: 992px) {
-        .navbar .navbar-nav .nav-link {
-            padding: 10px 15px; /* Larger tap targets for touch devices */
+        body, html {
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+            font-family: Arial, sans-serif;
         }
-
-        .section-header {
-            font-size: 2.5rem; /* Smaller headers for smaller screens */
+        header {
+            background-color: #8ecae6;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
-
-        p {
-            font-size: 1.3rem; /* Adjust paragraph text size for readability */
+        nav ul {
+            padding: 0;
+            list-style: none;
         }
-
-        .card {
-            margin-bottom: 30px; /* Add more space between cards */
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
         }
-
-        .card-body {
-            padding: 20px; /* More padding inside cards */
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
         }
-
-        .btn-primary {
-            font-size: 1.1rem; /* Slightly larger button text */
-            padding: 12px 24px; /* Larger buttons for easier interaction */
+        section {
+            padding: 120px 20px 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
         }
-
-        #products, #cart, #order {
-            padding: 20px; /* More padding on smaller screens */
+        .product {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 10px;
         }
-    }
-
-    @media (max-width: 768px) {
-        .navbar-toggler {
-            margin-right: 0; /* Adjust navbar toggle button position if necessary */
+        .product img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
         }
-
-        .section-header {
-            font-size: 2rem; /* Even smaller headers for mobile devices */
+        footer {
+            background-color: #8ecae6;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
         }
-
-        .card-title {
-            font-size: 1.5rem; /* Smaller card titles */
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
         }
-
-        .card-text {
-            font-size: 1.1rem; /* Smaller text in cards */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
         }
-
-        .row {
-            margin-right: 0;
-            margin-left: 0; /* Remove default Bootstrap margins in rows */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
         }
-
-        .col-md-4 {
-            flex: 0 0 100%; /* Make product cards stack vertically */
-            max-width: 100%; /* Use the full width */
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
         }
 
         #products {
-            min-height: auto; /* Adjust minimum height on smaller screens */
-            padding: 60px 20px; /* Larger padding */
+        /* Existing styles */
+
+        /* Add this to display the products side by side */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
         }
 
-        #cart {
-            margin-top: 20px; /* Add space above the cart on mobile */
+        .product {
+        /* Add this to give each product a width */
+        flex: 1 0 21%; /* This means each product will take up roughly 1/4 of the width of #products */
+        margin: 1%; /* Optional: add some margin around each product */
         }
-    }
 
+        /* Responsive CSS */
+    @media only screen and (max-width: 375px) {
+        /* Styles for iPhone devices */
+
+        #products, #order {
+            min-height: auto;
+        }
+
+        .container {
+            height: auto;
+        }
+
+        .product {
+            /* Change the width of each product for iPhone devices */
+            flex: 1 0 100%;
+        }
+
+        /* Add any other styles you want to change for iPhone devices */
+        }
     </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#welcome">Welcome</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#background">Background</a></li>
+                <li><a href="#location">Location</a></li>
+                <li><a href="#ingredients">Ingredients</a></li>
+                <li><a href="#order">Order</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="welcome">
+        <h2>Welcome to Our Store!</h2>
+        <p>Enjoy our refreshing, natural shakes made with the freshest ingredients from Manila.</p>
+    </section>
+
+    <section id="products">
+        <h2>Our Products</h2>
+        <!-- Example Product -->
+        <div class="product">
+            <img src="https://ikneadtoeat.com/wp-content/uploads/2021/07/mango-milkshake-photos-2.jpg" alt="Mango Shake">
+            <h3>Mango Shake</h3>
+            <p>A tropical delight full of fruity goodness.</p>
+        </div>
+
+        <!-- New Product 1 -->
+        <div class="product">
+            <img src="https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2021/08/Watermelon-Smoothie-7.jpg" alt="Product 1">
+            <h3>Watermelon Shake</h3>
+            <p>The perfect drink during the hot summer!</p>
+        </div>
+
+        <!-- New Product 2 -->
+        <div class="product">
+            <img src="https://allshecooks.com/wp-content/uploads/2016/02/easy-banana-smoothie.jpg" alt="Product 2">
+            <h3>Banana Shake</h3>
+            <p>Our best yellow drink to offer.</p>
+        </div>
+        <!-- Repeat for other products -->
+    </section>
+
+    <section id="background">
+        <h2>Our Story</h2>
+        <p>Started from a passion for wholesome, delicious treats.</p>
+    </section>
+
+    <section id="location">
+        <h2>Our Location</h2>
+        <p>Based in the heart of Manila, Philippines.</p>
+    </section>
+
+    <section id="ingredients">
+        <h2>What's Inside</h2>
+        <p>Only the freshest and finest ingredients.</p>
+    </section>
+
+    <section id="order">
+        <h2>How to Place an Order</h2>
+        <p>Browse our shakes, add them to your cart, and enjoy!</p>
+    
+        <!-- Products -->
+        <div class="product">
+            <img src="https://ikneadtoeat.com/wp-content/uploads/2021/07/mango-milkshake-photos-2.jpg" alt="Mango Shake">
+            <h3>Mango Shake</h3>
+            <p>100 pesos</p>
+            <button onclick="addToCart('Mango Shake', 100)">Add to Cart - ₱100</button>
+        </div>
+
+        <div class="product">
+            <img src="https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2021/08/Watermelon-Smoothie-7.jpg" alt="Watermelon Shake">
+            <h3>Watermelon Shake</h3>
+            <p>100 pesos.</p>
+            <button onclick="addToCart('Watermelon Shake', 100)">Add to Cart - ₱100</button>
+        </div>
+
+        <div class="product">
+            <img src="https://allshecooks.com/wp-content/uploads/2016/02/easy-banana-smoothie.jpg" alt="Banana Shake">
+            <h3>Banana Shake</h3>
+            <p>100 pesos.</p>
+            <button onclick="addToCart('Banana Shake', 100)">Add to Cart - ₱100</button>
+        </div>
+    
+        <!-- Cart -->
+        <div id="cart">
+            <h2>Your Cart</h2>
+            <!-- Items will be added here -->
+        </div>
+    
+        <!-- Total Bill -->
+        <div id="total">
+            <h2>Total: ₱<span id="totalAmount">0</span></h2>
+        </div>
+    
+        <!-- Order Complete Button -->
+        <button onclick="completeOrder()">Order Complete</button>
+    </section>
+    
+    <!-- Modal for Order Confirmation -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p>Thank you for your order! Your order will be with you soon.</p>
+        </div>
+    </div>
+    
     <script>
+        var totalAmount = 0;
+    
         function addToCart(productName, price) {
             var cart = document.getElementById('cart');
             var item = document.createElement('div');
             item.innerHTML = `<strong>${productName}</strong> - ₱${price.toFixed(2)}`;
             cart.appendChild(item);
+    
+            totalAmount += price;
+            document.getElementById('totalAmount').innerText = totalAmount.toFixed(2);
         }
-
-        function placeOrder() {
+    
+        function completeOrder() {
+            var modal = document.getElementById('myModal');
+            modal.style.display = 'block';
+        }
+    
+        function closeModal() {
+            var modal = document.getElementById('myModal');
+            modal.style.display = 'none';
+            // Reset the cart and the total amount
             var cart = document.getElementById('cart');
-            if (cart.children.length > 1) { // We expect more than the title
-                alert('Thank you for your order!');
-                while (cart.children.length > 1) { // Keep the title, remove the rest
-                    cart.removeChild(cart.lastChild);
-                }
-            } else {
-                alert('Your cart is empty. Please add some products before placing your order.');
+            while (cart.firstChild) {
+                cart.removeChild(cart.firstChild);
             }
+            totalAmount = 0;
+            document.getElementById('totalAmount').innerText = totalAmount.toFixed(2);
         }
     </script>
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">Shake It Up!</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#welcome">Welcome</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#products">Products</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#background">Background</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#location">Location</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#ingredients">Ingredients</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#order">Order</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>    
-
-        <!-- Welcome Section -->
-    <section id="welcome">
-        <div class="container">
-            <h2 class="section-header">Welcome to Our Store!</h2>
-            <p>Delight in our refreshing, natural shakes made with the freshest ingredients. Straight from our cozy corner in Manila to your hands, savor every sip!</p>
-        </div>
-    </section>
-
-    <!-- Background Section -->
-    <section id="background" style="background-color: var(--pastel-yellow);">
-        <div class="container">
-            <h2 class="section-header">Our Story</h2>
-            <p>Our journey began with a quest to find the perfect blend of taste and health. Each shake is a chapter of our story, crafted with love and care.</p>
-        </div>
-    </section>
-
-    <!-- Location Section -->
-    <section id="location">
-        <div class="container">
-            <h2 class="section-header">Our Location</h2>
-            <p>We're located in the heart of Manila, Philippines - a vibrant city that's as colorful and diverse as our shake flavors!</p>
-        </div>
-    </section>
-
-    <!-- Ingredients Section -->
-    <section id="ingredients" style="background-color: var(--pastel-pink);">
-        <div class="container">
-            <h2 class="section-header">What's Inside</h2>
-            <p>Mango Shake: Ripe Mangoes, Fresh Cream, a Dash of Honey. Watermelon Shake: Juicy Watermelon, Strawberry Essence. Banana Shake: Organic Bananas, Yogurt, a Sprinkle of Cinnamon.</p>
-        </div>
-    </section>
-
-    <!-- How to Order Section -->
-    <section id="order">
-        <div class="container">
-            <h2 class="section-header">How to Place an Order</h2>
-            <p>Ordering is easy! Browse our selection of shakes, add your favorites to the cart, and hit the 'Place Order' button. Enjoy your shakes in just a few clicks!</p>
-        </div>
-    </section>
-
-    <div class="container mt-5">
-        <div class="row">
-            <!-- Mango Shake Product -->
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="https://ikneadtoeat.com/wp-content/uploads/2021/07/mango-milkshake-photos-2.jpg" class="card-img-top" alt="Mango Shake">
-                    <div class="card-body">
-                        <h5 class="card-title">Mango Shake</h5>
-                        <p class="card-text">A tropical delight full of fruity goodness. Mango-odness!</p>
-                        <button class="btn btn-primary" onclick="addToCart('Mango Shake', 75)">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Watermelon Shake Product -->
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="https://shortgirltallorder.com/wp-content/uploads/2020/07/strawberry-watermelon-smoothie-square.jpg" class="card-img-top" alt="Watermelon Shake">
-                    <div class="card-body">
-                        <h5 class="card-title">Watermelon Shake</h5>
-                        <p class="card-text">Refreshing and sweet - a summertime favorite.</p>
-                        <button class="btn btn-primary" onclick="addToCart('Watermelon Shake', 85)">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Banana Shake Product -->
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="https://bakingmischief.com/wp-content/uploads/2021/02/banana-milkshake-without-ice-cream-image-square-3.jpg" class="card-img-top" alt="Banana Shake">
-                    <div class="card-body">
-                        <h5 class="card-title">Banana Shake</h5>
-                        <p class="card-text">Creamy and rich, perfect for banana lovers.</p>
-                        <button class="btn btn-primary" onclick="addToCart('Banana Shake', 75)">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div id="cart" class="mt-4">
-            <h4>Your Cart</h4>
-            <!-- Items added to cart will appear here -->
-        </div>
-        <button class="btn btn-primary mt-3" onclick="placeOrder()">Place Order</button>
-    </div>
-
-    <footer class="footer text-center">
-        <div class="container">
-            <span>Thank you for visiting Shake It Up! Have a great day!</span>
-        </div>
-    </footer>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
